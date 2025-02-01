@@ -1,0 +1,34 @@
+{
+    "listings": [
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Bachelor of Science in Computer Engineering",
+            "Program Description": "The Bachelor of Science in Computer Engineering (BSCoE) is accredited by the Commission for Academic Accreditation of the United Arab Emirates Ministry of Higher Education and Scientific Research and the Engineering Accreditation Commission of ABET. The program prepares students for a wide range of technical positions in business and government service, research, development and higher education, including a summer internship and a senior project."
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Bachelor of Science in Computer Science",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Master of Science in Computer Engineering",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Master of Science in Machine Learning",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Minor in Computer Engineering",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Minor in Computer Science",
+            "Program Description": ""
+        }
+    ]
+}

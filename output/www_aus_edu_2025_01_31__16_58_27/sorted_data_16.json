@@ -1,0 +1,34 @@
+{
+    "listings": [
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Bachelor of Science in Mathematics",
+            "Program Description": "Our Bachelor of Science in Mathematics program seeks to expose students to the theoretical foundations of mathematics, to provide them with understanding of the broad outlines of modern mathematics and its applications in a variety of disciplines, to stimulate their interest in research and to prepare them for their future work."
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Master of Science in Mathematics",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "PhD in Mathematics",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Minor in Actuarial Mathematics",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Minor in Data Science",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Minor in Applied and Computational Mathematics",
+            "Program Description": ""
+        }
+    ]
+}

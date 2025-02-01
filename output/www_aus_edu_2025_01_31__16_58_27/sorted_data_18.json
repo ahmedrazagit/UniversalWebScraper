@@ -1,0 +1,19 @@
+{
+    "listings": [
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Bachelor of Arts in English Language and Literature",
+            "Program Description": "The Department of English offers a Bachelor of Arts in English Language and Literature (BAELL). The degree fosters intellectual inquiry through an integrated approach to language and literature and prepares students to engage with the complex relationship between language, texts, thought and culture. This program emphasizes critical reading skills, the analysis of texts and language in context, and clarity in writing. Students will deepen their appreciation of cultural diversity and increase their understanding of how language and literature function to shape, interpret, and challenge meaning and values. This degree program prepares students for graduate study and careers in diverse fields, including education, media, and professional writing and publishing."
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Master of Arts in Teaching English to Speakers of Other Languages",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Minor in English Language and Literature",
+            "Program Description": ""
+        }
+    ]
+}

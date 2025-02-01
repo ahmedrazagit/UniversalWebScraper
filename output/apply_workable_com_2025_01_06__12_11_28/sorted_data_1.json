@@ -1,0 +1,12 @@
+{
+    "listings": [
+        {
+            "Job Title ": "Data Analyst - Intern",
+            "Company Name": "Bayut & dubizzle",
+            "Location": "UAE",
+            "Professionalism": "professional, international and entrepreneurial",
+            "Description of job/activites": "Access data, construct and manipulate large datasets to support planned analyses using SQL, Python and similar tools; Design and develop BI dashboards using Sisense or similar tools for various organisational metrics and indicators; Help with defining KPIs metrics and drive data governance; Develop analysis and reporting capabilities and monitor performance; Research and validate entity data; Liaise and analyse across projects; Analyze specification for systems interfaces and workflow solutions; Participate in design and implementation of experiments.",
+            "Requirements/qualifications": "Bachelor\u2019s degree in statistics, mathematics, computer science, or related field; Proficient in SQL; Proficient in Microsoft Excel; Knowledge of statistics and experience with statistical packages; Excellent verbal and written communication; Strong problem solving skills."
+        }
+    ]
+}

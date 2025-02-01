@@ -1,0 +1,19 @@
+{
+    "listings": [
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Bachelor of Science in Chemical Engineering",
+            "Program Description": "The Bachelor of Science in Chemical Engineering program is accredited by the Commission for Academic Accreditation of the UAE Ministry of Higher Education and Scientific Research and the Engineering Accreditation Commission of ABET. It offers a four-year, 132-credit degree plan designed to prepare students for a technical career in chemical engineering, emphasizing ethical responsibility and innovation."
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Bachelor of Science in Chemical and Biological Engineering",
+            "Program Description": "The Bachelor of Science in Chemical and Biological Engineering is designed to meet the demands of the chemical and biological industries while providing students with essential technical knowledge and skills."
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Master of Science in Chemical Engineering",
+            "Program Description": "The Master of Science in Chemical Engineering program prepares graduates for advanced professional practice and research roles in the field of chemical engineering."
+        }
+    ]
+}

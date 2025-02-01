@@ -1,0 +1,24 @@
+{
+    "listings": [
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Bachelor of Science in Electrical Engineering",
+            "Program Description": "The Bachelor of Science in Electrical Engineering (BSEE) is accredited by the Commission for Academic Accreditation of the United Arab Emirates Ministry of Higher Education and Scientific Research. This highly acclaimed four-year Bachelor of Science in Electrical Engineering (BSEE) degree program is based on a solid foundation of science and mathematics needed to understand advanced engineering topics and applications. The program is designed to ensure that graduates are equipped with the knowledge, analysis, and design skills needed to excel in engineering careers."
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Bachelor of Science in Intelligent Systems and Mechatronics Engineering",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Master of Science in Electrical Engineering",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Minor in Electrical Engineering",
+            "Program Description": ""
+        }
+    ]
+}

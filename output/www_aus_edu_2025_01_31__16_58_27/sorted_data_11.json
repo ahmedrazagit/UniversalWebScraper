@@ -1,0 +1,19 @@
+{
+    "listings": [
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Bachelor of Science in Mechanical Engineering",
+            "Program Description": "Our internationally accredited mechanical engineering degree program is one of the most dynamic in the Gulf region and is constantly responding to market requirements and the latest developments in this exciting area of study. The Bachelor of Science in Mechanical Engineering (BSME) is accredited by the Commission for Academic Accreditation of the United Arab Emirates Ministry of Higher Education and Scientific Research."
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Master of Science in Mechanical Engineering",
+            "Program Description": "The Master of Science in Mechanical Engineering program is designed to provide students with an advanced understanding of engineering concepts, methodologies, and applications, preparing them for successful careers in research and industry."
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Minor in Mechanical Engineering",
+            "Program Description": "This minor offers students from other disciplines the opportunity to gain foundational knowledge in mechanical engineering principles and practices."
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "listings": [
+        {
+            "job title": "Marketing Intern",
+            "description": "Actively Hiring",
+            "extract the link from the apply button for each job": "https://ae.linkedin.com/jobs/view/marketing-intern-at-nestl%C3%A9-4099717931?position=1&pageNum=0&refId=zUr9TSii3A6hUsOUivSpGw%3D%3D&trackingId=g32roWSDRbPexsWuiYwBVw%3D%3D"
+        },
+        {
+            "job title": "Front Office Intern",
+            "description": "3 weeks ago",
+            "extract the link from the apply button for each job": "https://ae.linkedin.com/jobs/view/front-office-intern-at-sofitel-dubai-the-obelisk-4080957499?position=2&pageNum=0&refId=zUr9TSii3A6hUsOUivSpGw%3D%3D&trackingId=HedRPW%2ByOVnko%2BqN7JXpWA%3D%3D"
+        },
+        {
+            "job title": "Front Office Intern",
+            "description": "Actively Hiring",
+            "extract the link from the apply button for each job": "https://ae.linkedin.com/jobs/view/front-office-intern-at-marriott-international-4102043509?position=3&pageNum=0&refId=zUr9TSii3A6hUsOUivSpGw%3D%3D&trackingId=wy2IkTtYLg55rzTcPO4Qew%3D%3D"
+        },
+        {
+            "job title": "*& ******",
+            "description": "Be an early applicant",
+            "extract the link from the apply button for each job": "https://ae.linkedin.com/jobs/view/f-b-intern-at-marriott-international-4102111181?position=4&pageNum=0&refId=zUr9TSii3A6hUsOUivSpGw%3D%3D&trackingId=3KrpIcuCJHXnIT3A90sbcg%3D%3D"
+        },
+        {
+            "job title": "**  ******",
+            "description": "Actively Hiring",
+            "extract the link from the apply button for each job": "https://ae.linkedin.com/jobs/view/hr-intern-at-chanel-4085976427?position=5&pageNum=0&refId=zUr9TSii3A6hUsOUivSpGw%3D%3D&trackingId=4VbJ7S%2F194U9qLWeX%2BPXUQ%3D%3D"
+        },
+        {
+            "job title": "********** ************* - **** & ******** ******* - ********",
+            "description": "Actively Hiring",
+            "extract the link from the apply button for each job": "https://ae.linkedin.com/jobs/view/internship-opportunities-food-beverage-service-jumeirah-at-jumeirah-4092596515?position=6&pageNum=0&refId=zUr9TSii3A6hUsOUivSpGw%3D%3D&trackingId=tuBVFN5lhersx12kwhDLmQ%3D%3D"
+        },
+        {
+            "job title": "********* ********** ** ******* *** & ****** ******* ****",
+            "description": "Actively Hiring",
+            "extract the link from the apply button for each job": "https://ae.linkedin.com/jobs/view/marketing-internship-at-holiday-inn-suites-science-park-at-ihg-hotels-resorts-4093636966?position=7&pageNum=0&refId=zUr9TSii3A6hUsOUivSpGw%3D%3D&trackingId=E%2FoBJ7LUv3AF9wXBtzZalw%3D%3D"
+        }
+    ]
+}

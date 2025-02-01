@@ -1,0 +1,19 @@
+{
+    "listings": [
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Bachelor of Science in Civil Engineering",
+            "Program Description": "The Bachelor of Science in Civil Engineering (BSCE) is accredited by the Commission for Academic Accreditation of the United Arab Emirates Ministry of Higher Education and Scientific Research. This undergraduate degree takes about four years to complete, focusing on disciplines such as structural engineering, construction materials, geotechnical engineering, transportation engineering, water resources, environmental engineering, and construction management. The program emphasizes group-based, open-ended design projects and prepares students for successful careers in civil engineering."
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Bachelor of Science in Digital Construction Engineering and Management",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Master of Science in Civil Engineering",
+            "Program Description": ""
+        }
+    ]
+}

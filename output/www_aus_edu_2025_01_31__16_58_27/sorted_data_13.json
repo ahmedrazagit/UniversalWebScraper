@@ -1,0 +1,39 @@
+{
+    "listings": [
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Bachelor of Science in Biology",
+            "Program Description": "The Bachelor of Science in Biology (BSB) at AUS offers comprehensive training in disciplines such as genetics, microbiology, physics, and ecology, preparing students for various career options in medicine, conservation, and education."
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Bachelor of Science in Chemistry and Biochemistry",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Bachelor of Science in Environmental Sciences and Sustainability",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Minor in Biology",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Minor in Environmental Policy",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Minor in Environmental Sciences",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Pre-med Track",
+            "Program Description": ""
+        }
+    ]
+}

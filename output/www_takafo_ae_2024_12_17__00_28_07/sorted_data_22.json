@@ -1,0 +1,13 @@
+{
+    "listings": [
+        {
+            "Job title": "Global Internship Opportunity - Cyber Security",
+            "company name": "Mubadala Investment Company",
+            "location": "Global",
+            "professionalism": "Internship",
+            "website url(same as the one your scanning)": "",
+            "description": "An International Company with world class threat intelligence services provided to customers across the globe is currently offering vacancies in the field of Cyber Security. The successful candidate would be expected to undertake original investigations, threat research, open source investigations and provide reporting out to customers. We are looking for candidates with a strong understanding of the threat landscape and deep technical skills with expertise in Malware Reverse Engineering.",
+            "requirements": "Minimum Required Education Level: Bachelors; Minimum Month's of Experience: 1; Proferred candidates with exposure to malware Analysis and have knowledge of programming using the following languages: C/C++, .NET, Python, and Delphi."
+        }
+    ]
+}

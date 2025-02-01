@@ -1,0 +1,34 @@
+{
+    "listings": [
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Bachelor of Arts in International Studies",
+            "Program Description": "The program equips students to think critically about global issues and understand the historical and social complexities of the world. It consists of 42 credits of general education courses, 45 credits of required courses in various social sciences, 15 credits of major electives, and 18 credits of free electives, developing skills in communication, research, and ethical responsibility."
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Minor in History",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Minor in International Studies",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Minor in Philosophy",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Master of Arts in International Studies",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Minor in Middle Eastern Studies",
+            "Program Description": ""
+        }
+    ]
+}

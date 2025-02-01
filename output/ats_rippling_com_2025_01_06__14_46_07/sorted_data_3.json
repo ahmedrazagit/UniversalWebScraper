@@ -1,0 +1,19 @@
+{
+    "listings": [
+        {
+            "Job Title ": "Aviation Consultant",
+            "Description of job/activites": "Responsible for providing advisory services to clients in the aviation and aerospace sectors, focusing on commercial, financial, and technical disciplines.",
+            "Requirements/qualifications": "Experience in aviation consultancy or related fields, strong analytical skills, effective communication, and a passion for the aviation industry."
+        },
+        {
+            "Job Title ": "Senior Analyst",
+            "Description of job/activites": "Conduct market research, perform financial modeling, and assist in developing strategic recommendations for clients.",
+            "Requirements/qualifications": "Bachelor's degree in finance, economics, or related field; experience in data analysis and proficiency in Excel."
+        },
+        {
+            "Job Title ": "Project Manager",
+            "Description of job/activites": "Lead projects from inception to completion, ensuring deliverables meet client expectations and timelines.",
+            "Requirements/qualifications": "Proven project management experience, excellent organizational skills, and a background in aviation or consulting."
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "listings": [
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Bachelor of Science in Environmental Sciences and Sustainability",
+            "Program Description": "The interdisciplinary Bachelor of Science in Environmental Sciences and Sustainability integrates environmental sustainability with biology, chemistry and other related sciences, preparing students to study current environmental issues using critical thinking skills and the scientific method to devise solutions to regional and global challenges."
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Bachelor of Science in Biology",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Bachelor of Science in Chemistry and Biochemistry",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Minor in Biology",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Minor in Environmental Policy",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Minor in Environmental Sciences",
+            "Program Description": ""
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Pre-med Track",
+            "Program Description": ""
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "listings": [
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Bachelor of Arts in Mass Communication",
+            "Program Description": "The Bachelor of Arts in Mass Communication (BAMC) aims to prepare a new generation of communicators who combine talent and technical digital knowledge to create and manage content relevant to corporate and non-profit sectors. The program\u2019s focal areas in digital storytelling, multiplatform communications, multimedia journalism, social media, infographics and social analytics seek to engage students with the latest media industry trends through both on-campus and field learning and training."
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Concentration in Integrated Marketing Communications",
+            "Program Description": "Students who select the Integrated Marketing Communications (IMC) concentration must successfully complete a minimum of 30 credits with a focus on principles of integrated marketing, multiplatform media planning and social media strategies."
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Concentration in Journalism",
+            "Program Description": "Students who select the journalism concentration must complete a minimum of 30 credits, including courses on principles of journalism, news writing, digital storytelling, and multimedia journalism."
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Minor in Integrated Marketing Communications",
+            "Program Description": "The minor consists of a minimum of 18 credits, including at least nine credits in courses at or above the 300 level, and is not open to mass communication students in the IMC concentration."
+        },
+        {
+            "University Name": "American University of Sharjah",
+            "Program Name": "Minor in Journalism",
+            "Program Description": "The minor consists of a minimum of 18 credits, including at least nine credits in courses at or above the 300 level, and is not open to mass communication students in the journalism concentration."
+        }
+    ]
+}
