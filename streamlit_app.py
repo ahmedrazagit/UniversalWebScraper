@@ -25,8 +25,8 @@ from assets import PRICING
 import os
 
 # Initialize Streamlit app
-st.set_page_config(page_title="Universal Web Scraper", page_icon="🦑")
-st.title("Universal Web Scraper 🦑")
+st.set_page_config(page_title="TWE Universal Web Scraper", page_icon="🐝")
+st.title("Universal Web Scraper for TWE 🐝")
 
 # Initialize session state variables
 if 'scraping_state' not in st.session_state:
