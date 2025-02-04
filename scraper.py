@@ -18,11 +18,9 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
-
 
 from openai import OpenAI
 import google.generativeai as genai
@@ -32,14 +30,11 @@ from api_management import get_api_key
 from assets import USER_AGENTS,PRICING,HEADLESS_OPTIONS,SYSTEM_MESSAGE,USER_MESSAGE,LLAMA_MODEL_FULLNAME,GROQ_LLAMA_MODEL_FULLNAME,HEADLESS_OPTIONS_DOCKER
 load_dotenv()
 
-
-# Set up the Chrome WebDriver options
-
+load_dotenv()
 
 def is_running_in_docker():
     """
     Detect if the app is running inside a Docker container.
-    This checks if the '/proc/1/cgroup' file contains 'docker'.
     """
     try:
         with open("/proc/1/cgroup", "rt") as file:
@@ -47,89 +42,51 @@ def is_running_in_docker():
     except Exception:
         return False
 
-def setup_selenium(attended_mode=False):
+def setup_selenium():
     options = Options()
+    options.add_argument("--headless=new")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--window-size=1920,1080")
+    options.add_argument("--remote-debugging-port=9222")
+    
     service = Service(ChromeDriverManager().install())
-
-    # Apply headless options based on whether the code is running in Docker
-    if is_running_in_docker():
-        # Running inside Docker, use Docker-specific headless options
-        for option in HEADLESS_OPTIONS_DOCKER:
-            options.add_argument(option)
-    else:
-        # Not running inside Docker, use the normal headless options
-        for option in HEADLESS_OPTIONS:
-            options.add_argument(option)
-
-    # Initialize the WebDriver
     driver = webdriver.Chrome(service=service, options=options)
     return driver
 
-
-
-
-def fetch_html_selenium(url, attended_mode=False, driver=None):
-    if driver is None:
-        driver = setup_selenium(attended_mode)
-        should_quit = True
-        if not attended_mode:
-            driver.get(url)
-    else:
-        should_quit = False
-        # Do not navigate to the URL if in attended mode and driver is already initialized
-        if not attended_mode:
-            driver.get(url)
-
+def fetch_html_selenium(url, attended_mode=False):
+    driver = setup_selenium()
     try:
-        if not attended_mode:
-            # Add more realistic actions like scrolling
-            driver.execute_script("window.scrollTo(0, document.body.scrollHeight/2);")
+        driver.get(url)
+        time.sleep(random.uniform(1.1, 1.8))
+        
+        if not attended_mode:  # Only scroll if unattended
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             time.sleep(random.uniform(1.1, 1.8))
-            driver.execute_script("window.scrollTo(0, document.body.scrollHeight/1.2);")
-            time.sleep(random.uniform(1.1, 1.8))
-            driver.execute_script("window.scrollTo(0, document.body.scrollHeight/1);")
-            time.sleep(random.uniform(1.1, 1.8))
-        # Get the page source from the current page
-        html = driver.page_source
-        return html
+        
+        return driver.page_source
     finally:
-        if should_quit:
-            driver.quit()
-
-
+        driver.quit()
 
 
 def clean_html(html_content):
     soup = BeautifulSoup(html_content, 'html.parser')
-    
-    # Remove headers and footers based on common HTML tags or classes
     for element in soup.find_all(['header', 'footer']):
-        element.decompose()  # Remove these tags and their content
-
+        element.decompose()
     return str(soup)
 
-
 def html_to_markdown_with_readability(html_content):
-
-    
-    cleaned_html = clean_html(html_content)  
-    
-    # Convert to markdown
+    cleaned_html = clean_html(html_content)
     markdown_converter = html2text.HTML2Text()
     markdown_converter.ignore_links = False
-    markdown_content = markdown_converter.handle(cleaned_html)
-    
-    return markdown_content
+    return markdown_converter.handle(cleaned_html)
 
-
-    
 def save_raw_data(raw_data: str, output_folder: str, file_name: str):
-    """Save raw markdown data to the specified output folder."""
     os.makedirs(output_folder, exist_ok=True)
     raw_output_path = os.path.join(output_folder, file_name)
     with open(raw_output_path, 'w', encoding='utf-8') as f:
         f.write(raw_data)
-    print(f"Raw data saved to {raw_output_path}")
     return raw_output_path
 
 
