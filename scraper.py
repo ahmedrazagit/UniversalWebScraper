@@ -20,6 +20,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import WebDriverException, TimeoutException
 from webdriver_manager.chrome import ChromeDriverManager
 
 from openai import OpenAI
@@ -27,8 +28,7 @@ import google.generativeai as genai
 from groq import Groq
 
 from api_management import get_api_key
-from assets import USER_AGENTS,PRICING,HEADLESS_OPTIONS,SYSTEM_MESSAGE,USER_MESSAGE,LLAMA_MODEL_FULLNAME,GROQ_LLAMA_MODEL_FULLNAME,HEADLESS_OPTIONS_DOCKER
-load_dotenv()
+from assets import USER_AGENTS, PRICING, HEADLESS_OPTIONS, SYSTEM_MESSAGE, USER_MESSAGE, LLAMA_MODEL_FULLNAME, GROQ_LLAMA_MODEL_FULLNAME, HEADLESS_OPTIONS_DOCKER
 
 load_dotenv()
 
@@ -43,39 +43,128 @@ def is_running_in_docker():
         return False
 
 def setup_selenium():
+    """
+    Set up Selenium WebDriver with appropriate options for different environments.
+    """
     options = Options()
+    
+    # Basic options for headless mode
     options.add_argument("--headless=new")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--window-size=1920,1080")
-    options.add_argument("--remote-debugging-port=9222")
     
-    service = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=service, options=options)
-    return driver
-
-def fetch_html_selenium(url, attended_mode=False):
-    driver = setup_selenium()
+    # Add random user agent
+    options.add_argument(f'user-agent={random.choice(USER_AGENTS)}')
+    
+    # Additional options for stability
+    options.add_argument("--disable-extensions")
+    options.add_argument("--disable-infobars")
+    options.add_argument("--disable-notifications")
+    options.add_argument("--disable-automation")
+    options.add_argument("--disable-blink-features=AutomationControlled")
+    
     try:
-        driver.get(url)
-        time.sleep(random.uniform(1.1, 1.8))
+        if is_running_in_docker():
+            # Docker-specific setup
+            driver = webdriver.Chrome(options=options)
+        else:
+            # Regular setup with ChromeDriverManager
+            service = Service(ChromeDriverManager().install())
+            driver = webdriver.Chrome(service=service, options=options)
         
-        if not attended_mode:  # Only scroll if unattended
-            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-            time.sleep(random.uniform(1.1, 1.8))
-        
-        return driver.page_source
-    finally:
-        driver.quit()
+        return driver
+    except Exception as e:
+        st.error(f"Failed to initialize Chrome driver: {str(e)}")
+        raise
 
+def fetch_html_selenium(url, attended_mode=False, max_retries=3):
+    """
+    Fetch HTML content using Selenium with retry mechanism and better error handling.
+    """
+    retry_count = 0
+    while retry_count < max_retries:
+        driver = None
+        try:
+            driver = setup_selenium()
+            
+            # Set page load timeout
+            driver.set_page_load_timeout(30)
+            
+            # Navigate to URL with wait
+            driver.get(url)
+            WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.TAG_NAME, "body"))
+            )
+            
+            # Random delay to avoid detection
+            time.sleep(random.uniform(2, 4))
+            
+            if not attended_mode:
+                # Scroll with error handling
+                try:
+                    # Smooth scroll
+                    total_height = int(driver.execute_script("return document.body.scrollHeight"))
+                    for i in range(1, total_height, 100):
+                        driver.execute_script(f"window.scrollTo(0, {i});")
+                        time.sleep(0.1)
+                except Exception as scroll_error:
+                    st.warning(f"Scrolling encountered an error: {str(scroll_error)}")
+            
+            # Get page source
+            page_source = driver.page_source
+            return page_source
+            
+        except TimeoutException:
+            retry_count += 1
+            st.warning(f"Timeout while loading page. Attempt {retry_count} of {max_retries}")
+            if retry_count == max_retries:
+                raise
+                
+        except WebDriverException as e:
+            retry_count += 1
+            st.warning(f"WebDriver error. Attempt {retry_count} of {max_retries}. Error: {str(e)}")
+            if retry_count == max_retries:
+                raise
+                
+        except Exception as e:
+            st.error(f"Unexpected error: {str(e)}")
+            raise
+            
+        finally:
+            if driver:
+                try:
+                    driver.quit()
+                except:
+                    pass
+                    
+        # Wait before retry
+        if retry_count < max_retries:
+            time.sleep(random.uniform(2, 5))
 
 def clean_html(html_content):
-    soup = BeautifulSoup(html_content, 'html.parser')
-    for element in soup.find_all(['header', 'footer']):
-        element.decompose()
-    return str(soup)
+    """
+    Clean HTML content with improved error handling.
+    """
+    try:
+        soup = BeautifulSoup(html_content, 'html.parser')
+        
+        # Remove unwanted elements
+        for element in soup.find_all(['script', 'style', 'header', 'footer', 'nav']):
+            element.decompose()
+            
+        # Remove empty elements
+        for element in soup.find_all():
+            if len(element.get_text(strip=True)) == 0:
+                element.decompose()
+                
+        return str(soup)
+    except Exception as e:
+        st.error(f"Error cleaning HTML: {str(e)}")
+        return html_content
 
+# [Rest of your code remains the same...]
 def html_to_markdown_with_readability(html_content):
     cleaned_html = clean_html(html_content)
     markdown_converter = html2text.HTML2Text()
