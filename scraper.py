@@ -22,7 +22,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import WebDriverException, TimeoutException
 from webdriver_manager.chrome import ChromeDriverManager
-
+from webdriver_manager.core.os_manager import ChromeType
 from openai import OpenAI
 import google.generativeai as genai
 from groq import Groq
@@ -44,40 +44,42 @@ def is_running_in_docker():
 
 def setup_selenium():
     """
-    Set up Selenium WebDriver with appropriate options for different environments.
+    Set up Selenium WebDriver with appropriate options for Streamlit Cloud.
     """
-    options = Options()
-    
-    # Basic options for headless mode
-    options.add_argument("--headless=new")
-    options.add_argument("--disable-gpu")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
-    options.add_argument("--window-size=1920,1080")
-    
-    # Add random user agent
-    options.add_argument(f'user-agent={random.choice(USER_AGENTS)}')
-    
-    # Additional options for stability
-    options.add_argument("--disable-extensions")
-    options.add_argument("--disable-infobars")
-    options.add_argument("--disable-notifications")
-    options.add_argument("--disable-automation")
-    options.add_argument("--disable-blink-features=AutomationControlled")
-    
-    try:
-        if is_running_in_docker():
-            # Docker-specific setup
-            driver = webdriver.Chrome(options=options)
-        else:
-            # Regular setup with ChromeDriverManager
-            service = Service(ChromeDriverManager().install())
-            driver = webdriver.Chrome(service=service, options=options)
+    @st.cache_resource
+    def get_driver():
+        options = Options()
         
-        return driver
-    except Exception as e:
-        st.error(f"Failed to initialize Chrome driver: {str(e)}")
-        raise
+        # Basic options for headless mode
+        options.add_argument("--headless=new")
+        options.add_argument("--disable-gpu")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--window-size=1920,1080")
+        
+        # Add random user agent
+        options.add_argument(f'user-agent={random.choice(USER_AGENTS)}')
+        
+        # Additional options for stability
+        options.add_argument("--disable-extensions")
+        options.add_argument("--disable-infobars")
+        options.add_argument("--disable-notifications")
+        options.add_argument("--disable-automation")
+        options.add_argument("--disable-blink-features=AutomationControlled")
+        
+        try:
+            # Streamlit Cloud compatible setup
+            return webdriver.Chrome(
+                service=Service(
+                    ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()
+                ),
+                options=options
+            )
+        except Exception as e:
+            st.error(f"Failed to initialize Chrome driver: {str(e)}")
+            raise
+
+    return get_driver()
 
 def fetch_html_selenium(url, attended_mode=False, max_retries=3):
     """
@@ -102,7 +104,6 @@ def fetch_html_selenium(url, attended_mode=False, max_retries=3):
             time.sleep(random.uniform(2, 4))
             
             if not attended_mode:
-                # Scroll with error handling
                 try:
                     # Smooth scroll
                     total_height = int(driver.execute_script("return document.body.scrollHeight"))
