@@ -297,7 +297,7 @@ if st.session_state['scraping_state'] == 'completed' and st.session_state['resul
         st.subheader("Download Extracted Data")
         col1, col2 = st.columns(2)
         with col1:
-            json_data = json.dumps(all_data, default=lambda o: o.dict() if hasattr(o, 'dict') else str(o), indent=4)
+            json_data = json.dumps(all_data, default=lambda o: o.model_dump() if hasattr(o, 'model_dump') else str(o), indent=4)
             st.download_button(
                 "Download JSON",
                 data=json_data,
