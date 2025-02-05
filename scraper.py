@@ -52,7 +52,29 @@ def setup_selenium():
         options.add_argument(f'user-agent={random.choice(USER_AGENTS)}')
         
         try:
-            service = Service(GeckoDriverManager().install())
+            # Create a Service object with a specific geckodriver version
+            driver_path = os.path.join(os.getcwd(), 'geckodriver')
+            if not os.path.exists(driver_path):
+                # If geckodriver doesn't exist, download it
+                if os.name == 'nt':  # Windows
+                    url = "https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-win64.zip"
+                    import urllib.request
+                    import zipfile
+                    urllib.request.urlretrieve(url, "geckodriver.zip")
+                    with zipfile.ZipFile("geckodriver.zip", 'r') as zip_ref:
+                        zip_ref.extractall()
+                    os.remove("geckodriver.zip")
+                else:  # Linux/Mac
+                    url = "https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux64.tar.gz"
+                    import tarfile
+                    import urllib.request
+                    urllib.request.urlretrieve(url, "geckodriver.tar.gz")
+                    with tarfile.open("geckodriver.tar.gz") as tar:
+                        tar.extractall()
+                    os.remove("geckodriver.tar.gz")
+                    os.chmod(driver_path, 0o755)
+
+            service = Service(executable_path=driver_path)
             driver = webdriver.Firefox(
                 options=options,
                 service=service,
