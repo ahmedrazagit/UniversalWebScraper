@@ -1,4 +1,13 @@
 # streamlit_app.py
+import os
+
+def install_chromium():
+    os.system("apt-get update && apt-get install -y chromium-chromedriver chromium-browser")
+
+# Run the installation
+install_chromium()
+
+# Continue with the rest of your script
 
 import streamlit as st
 from streamlit_tags import st_tags_sidebar
@@ -22,7 +31,7 @@ from pagination_detector import detect_pagination_elements
 import re
 from urllib.parse import urlparse
 from assets import PRICING
-import os
+
 
 # Initialize Streamlit app
 st.set_page_config(page_title="TWE Universal Web Scraper", page_icon="🐝")
