@@ -11,21 +11,9 @@ from bs4 import BeautifulSoup
 from pydantic import BaseModel, Field, create_model
 import html2text
 import tiktoken
-import os
-import random
-import time
-import re
-import json
-from datetime import datetime
-from typing import List, Dict, Type
-
-import pandas as pd
-from bs4 import BeautifulSoup
-from pydantic import BaseModel, Field, create_model
-import html2text
-import tiktoken
 import streamlit as st
 
+from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
@@ -35,102 +23,113 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 
+
 from openai import OpenAI
 import google.generativeai as genai
 from groq import Groq
 
 from api_management import get_api_key
-from assets import USER_AGENTS, PRICING, SYSTEM_MESSAGE, USER_MESSAGE, LLAMA_MODEL_FULLNAME, GROQ_LLAMA_MODEL_FULLNAME
+from assets import USER_AGENTS,PRICING,HEADLESS_OPTIONS,SYSTEM_MESSAGE,USER_MESSAGE,LLAMA_MODEL_FULLNAME,GROQ_LLAMA_MODEL_FULLNAME,HEADLESS_OPTIONS_DOCKER
+load_dotenv()
+
+
+# Set up the Chrome WebDriver options
+
+
+def is_running_in_docker():
+    """
+    Detect if the app is running inside a Docker container.
+    This checks if the '/proc/1/cgroup' file contains 'docker'.
+    """
+    try:
+        with open("/proc/1/cgroup", "rt") as file:
+            return "docker" in file.read()
+    except Exception:
+        return False
 
 def setup_selenium(attended_mode=False):
-    """
-    Set up Chrome WebDriver with appropriate options for both local and cloud environments.
-    """
     options = Options()
-    
-    if not attended_mode:
-        # Headless mode configuration
-        options.add_argument("--headless")
-        options.add_argument("--no-sandbox")
-        options.add_argument("--disable-dev-shm-usage")
-        options.add_argument("--disable-gpu")
-        options.add_argument("--disable-extensions")
-        options.add_argument("--disable-infobars")
-        options.add_argument("--disable-notifications")
-        options.add_argument("--disable-popup-blocking")
-        options.add_argument("--window-size=1920,1080")
-        options.add_argument(f"user-agent={random.choice(USER_AGENTS)}")
+    service = Service(ChromeDriverManager().install())
 
-    # Check if running on Streamlit Cloud
-    if os.getenv('STREAMLIT_RUNTIME'):
-        options.binary_location = "/usr/bin/chromium-browser"
-        service = Service()
+    # Apply headless options based on whether the code is running in Docker
+    if is_running_in_docker():
+        # Running inside Docker, use Docker-specific headless options
+        for option in HEADLESS_OPTIONS_DOCKER:
+            options.add_argument(option)
     else:
-        service = Service(ChromeDriverManager().install())
+        # Not running inside Docker, use the normal headless options
+        for option in HEADLESS_OPTIONS:
+            options.add_argument(option)
 
-    try:
-        driver = webdriver.Chrome(service=service, options=options)
-        return driver
-    except Exception as e:
-        print(f"Error setting up Chrome WebDriver: {str(e)}")
-        raise
+    # Initialize the WebDriver
+    driver = webdriver.Chrome(service=service, options=options)
+    return driver
+
+
+
 
 def fetch_html_selenium(url, attended_mode=False, driver=None):
-    """
-    Fetch HTML content using Selenium with improved error handling and realistic behavior.
-    """
-    should_quit = False
-    try:
-        if driver is None:
-            driver = setup_selenium(attended_mode)
-            should_quit = True
-        
-        driver.set_page_load_timeout(30)
-        
-        try:
-            driver.get(url)
-        except Exception as e:
-            print(f"Error loading URL {url}: {str(e)}")
-            return ""
-
+    if driver is None:
+        driver = setup_selenium(attended_mode)
+        should_quit = True
         if not attended_mode:
-            scroll_positions = [0.2, 0.5, 0.8, 1.0]
-            for pos in scroll_positions:
-                driver.execute_script(f"window.scrollTo(0, document.body.scrollHeight * {pos});")
-                time.sleep(random.uniform(1.1, 1.8))
+            driver.get(url)
+    else:
+        should_quit = False
+        # Do not navigate to the URL if in attended mode and driver is already initialized
+        if not attended_mode:
+            driver.get(url)
 
-            try:
-                WebDriverWait(driver, 10).until(
-                    EC.presence_of_element_located((By.TAG_NAME, "body"))
-                )
-            except Exception:
-                pass
-
-        return driver.page_source
-    except Exception as e:
-        print(f"Error in fetch_html_selenium: {str(e)}")
-        return ""
+    try:
+        if not attended_mode:
+            # Add more realistic actions like scrolling
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight/2);")
+            time.sleep(random.uniform(1.1, 1.8))
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight/1.2);")
+            time.sleep(random.uniform(1.1, 1.8))
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight/1);")
+            time.sleep(random.uniform(1.1, 1.8))
+        # Get the page source from the current page
+        html = driver.page_source
+        return html
     finally:
-        if should_quit and driver:
+        if should_quit:
             driver.quit()
+
+
+
 
 def clean_html(html_content):
     soup = BeautifulSoup(html_content, 'html.parser')
+    
+    # Remove headers and footers based on common HTML tags or classes
     for element in soup.find_all(['header', 'footer']):
-        element.decompose()
+        element.decompose()  # Remove these tags and their content
+
     return str(soup)
 
+
 def html_to_markdown_with_readability(html_content):
-    cleaned_html = clean_html(html_content)
+
+    
+    cleaned_html = clean_html(html_content)  
+    
+    # Convert to markdown
     markdown_converter = html2text.HTML2Text()
     markdown_converter.ignore_links = False
-    return markdown_converter.handle(cleaned_html)
+    markdown_content = markdown_converter.handle(cleaned_html)
+    
+    return markdown_content
 
+
+    
 def save_raw_data(raw_data: str, output_folder: str, file_name: str):
+    """Save raw markdown data to the specified output folder."""
     os.makedirs(output_folder, exist_ok=True)
     raw_output_path = os.path.join(output_folder, file_name)
     with open(raw_output_path, 'w', encoding='utf-8') as f:
         f.write(raw_data)
+    print(f"Raw data saved to {raw_output_path}")
     return raw_output_path
 
 
