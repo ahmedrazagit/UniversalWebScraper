@@ -50,6 +50,12 @@ def setup_selenium():
         
         # Add random user agent
         options.add_argument(f'user-agent={random.choice(USER_AGENTS)}')
+
+        # Set Firefox binary location for Streamlit Cloud
+        if os.path.exists("/usr/bin/firefox"):
+            options.binary_location = "/usr/bin/firefox"
+        elif os.path.exists("/snap/bin/firefox"):
+            options.binary_location = "/snap/bin/firefox"
         
         try:
             # Create a Service object with a specific geckodriver version
@@ -75,6 +81,11 @@ def setup_selenium():
                     os.chmod(driver_path, 0o755)
 
             service = Service(executable_path=driver_path)
+            
+            # Add logging for debugging
+            st.write("Firefox binary location:", options.binary_location)
+            st.write("Geckodriver path:", driver_path)
+            
             driver = webdriver.Firefox(
                 options=options,
                 service=service,
@@ -84,6 +95,11 @@ def setup_selenium():
             st.error(f"Failed to initialize Firefox driver: {str(e)}")
             import traceback
             st.error(f"Detailed error: {traceback.format_exc()}")
+            # Add additional debugging information
+            st.error("System information:")
+            st.error(f"OS: {os.name}")
+            st.error(f"Current working directory: {os.getcwd()}")
+            st.error(f"Files in current directory: {os.listdir()}")
             raise
 
     return get_driver()
