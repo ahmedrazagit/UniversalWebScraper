@@ -13,70 +13,55 @@ import html2text
 import tiktoken
 import streamlit as st
 
-from dotenv import load_dotenv
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
+from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import WebDriverException, TimeoutException
-from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.core.os_manager import ChromeType
+from webdriver_manager.firefox import GeckoDriverManager
+
 from openai import OpenAI
 import google.generativeai as genai
 from groq import Groq
 
+from dotenv import load_dotenv
 from api_management import get_api_key
-from assets import USER_AGENTS, PRICING, HEADLESS_OPTIONS, SYSTEM_MESSAGE, USER_MESSAGE, LLAMA_MODEL_FULLNAME, GROQ_LLAMA_MODEL_FULLNAME, HEADLESS_OPTIONS_DOCKER
+from assets import USER_AGENTS, PRICING, SYSTEM_MESSAGE, USER_MESSAGE, LLAMA_MODEL_FULLNAME, GROQ_LLAMA_MODEL_FULLNAME
 
 load_dotenv()
 
-def is_running_in_docker():
-    """
-    Detect if the app is running inside a Docker container.
-    """
-    try:
-        with open("/proc/1/cgroup", "rt") as file:
-            return "docker" in file.read()
-    except Exception:
-        return False
-
 def setup_selenium():
     """
-    Set up Selenium WebDriver with appropriate options for Streamlit Cloud.
+    Set up Selenium WebDriver with Firefox for Streamlit Cloud.
     """
     @st.cache_resource
     def get_driver():
-        options = Options()
+        options = FirefoxOptions()
         
         # Basic options for headless mode
-        options.add_argument("--headless=new")
+        options.add_argument("--headless")
         options.add_argument("--disable-gpu")
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
-        options.add_argument("--window-size=1920,1080")
+        options.add_argument("--width=1920")
+        options.add_argument("--height=1080")
         
         # Add random user agent
         options.add_argument(f'user-agent={random.choice(USER_AGENTS)}')
         
-        # Additional options for stability
-        options.add_argument("--disable-extensions")
-        options.add_argument("--disable-infobars")
-        options.add_argument("--disable-notifications")
-        options.add_argument("--disable-automation")
-        options.add_argument("--disable-blink-features=AutomationControlled")
-        
         try:
-            # Streamlit Cloud compatible setup
-            return webdriver.Chrome(
-                service=Service(
-                    ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()
-                ),
-                options=options
+            service = Service(GeckoDriverManager().install())
+            driver = webdriver.Firefox(
+                options=options,
+                service=service,
             )
+            return driver
         except Exception as e:
-            st.error(f"Failed to initialize Chrome driver: {str(e)}")
+            st.error(f"Failed to initialize Firefox driver: {str(e)}")
+            import traceback
+            st.error(f"Detailed error: {traceback.format_exc()}")
             raise
 
     return get_driver()
