@@ -1,0 +1,29 @@
+{
+    "listings": [
+        {
+            "Univeristy Name": "SAE Institute",
+            "Program Name": "Animation",
+            "Complete program URL with www": "https://dubai.sae.edu/courses/animation/"
+        },
+        {
+            "Univeristy Name": "SAE Institute",
+            "Program Name": "Audio",
+            "Complete program URL with www": "https://dubai.sae.edu/courses/audio/"
+        },
+        {
+            "Univeristy Name": "SAE Institute",
+            "Program Name": "Design",
+            "Complete program URL with www": "https://dubai.sae.edu/courses/design/"
+        },
+        {
+            "Univeristy Name": "SAE Institute",
+            "Program Name": "Film",
+            "Complete program URL with www": "https://dubai.sae.edu/courses/film/"
+        },
+        {
+            "Univeristy Name": "SAE Institute",
+            "Program Name": "Games",
+            "Complete program URL with www": "https://dubai.sae.edu/courses/games/"
+        }
+    ]
+}

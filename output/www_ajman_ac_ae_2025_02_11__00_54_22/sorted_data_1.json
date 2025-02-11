@@ -1,0 +1,24 @@
+{
+    "listings": [
+        {
+            "University name": "Ajman University",
+            "Each Program Name Available": "Bachelor of Architectural Engineering"
+        },
+        {
+            "University name": "Ajman University",
+            "Each Program Name Available": "Master of Science in Artificial Intelligence"
+        },
+        {
+            "University name": "Ajman University",
+            "Each Program Name Available": "Bachelor of Science in Data Analytics"
+        },
+        {
+            "University name": "Ajman University",
+            "Each Program Name Available": "Master of Public Relations and Corporate Communication"
+        },
+        {
+            "University name": "Ajman University",
+            "Each Program Name Available": "Master of Science in Clinical Pharmacy (MSc in Clinical Pharmacy)"
+        }
+    ]
+}

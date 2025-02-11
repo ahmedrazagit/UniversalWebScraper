@@ -1,0 +1,29 @@
+{
+    "listings": [
+        {
+            "Univeristy Name": "SAE Institute",
+            "Program Name": "Bachelor of Animation",
+            "Complete program URL with www": "https://dubai.sae.edu/courses/animation/bachelor-of-animation/"
+        },
+        {
+            "Univeristy Name": "SAE Institute",
+            "Program Name": "Bachelor of Audio",
+            "Complete program URL with www": "https://dubai.sae.edu/courses/audio/bachelor-of-audio/"
+        },
+        {
+            "Univeristy Name": "SAE Institute",
+            "Program Name": "Bachelor of Design & Visual Communication",
+            "Complete program URL with www": "https://dubai.sae.edu/courses/design/bachelor-of-design-visual-communication/"
+        },
+        {
+            "Univeristy Name": "SAE Institute",
+            "Program Name": "Bachelor of Film",
+            "Complete program URL with www": "https://dubai.sae.edu/courses/film/bachelor-of-film/"
+        },
+        {
+            "Univeristy Name": "SAE Institute",
+            "Program Name": "Bachelor of Games Development",
+            "Complete program URL with www": "https://dubai.sae.edu/courses/games/bachelor-of-games-development/"
+        }
+    ]
+}

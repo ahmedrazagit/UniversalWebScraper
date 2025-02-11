@@ -1,0 +1,24 @@
+{
+    "listings": [
+        {
+            "University name": "SBS Swiss Business School",
+            "Each Program Name": "Bachelor of Business Administration (BBA)",
+            "Complete Program/page URL with www extension": "https://sbs-uae.org/bachelor-of-business-administration-3-years/"
+        },
+        {
+            "University name": "SBS Swiss Business School",
+            "Each Program Name": "Master of Business Administration (MBA)",
+            "Complete Program/page URL with www extension": "https://sbs-uae.org/master-of-business-administration-mba/"
+        },
+        {
+            "University name": "SBS Swiss Business School",
+            "Each Program Name": "Master of Science in Healthcare Management (MSc HCM)",
+            "Complete Program/page URL with www extension": "https://sbs-uae.org/master-of-science-in-healthcare-management/"
+        },
+        {
+            "University name": "SBS Swiss Business School",
+            "Each Program Name": "Doctor of Business Administration (DBA)",
+            "Complete Program/page URL with www extension": "https://sbs-uae.org/doctor-of-business-administration-dba/"
+        }
+    ]
+}

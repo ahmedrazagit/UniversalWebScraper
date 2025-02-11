@@ -23,7 +23,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 
-
 from openai import OpenAI
 import google.generativeai as genai
 from groq import Groq
@@ -32,70 +31,91 @@ from api_management import get_api_key
 from assets import USER_AGENTS,PRICING,HEADLESS_OPTIONS,SYSTEM_MESSAGE,USER_MESSAGE,LLAMA_MODEL_FULLNAME,GROQ_LLAMA_MODEL_FULLNAME,HEADLESS_OPTIONS_DOCKER
 load_dotenv()
 
-
-# Set up the Chrome WebDriver options
-
-
-def is_running_in_docker():
-    """
-    Detect if the app is running inside a Docker container.
-    This checks if the '/proc/1/cgroup' file contains 'docker'.
-    """
-    try:
-        with open("/proc/1/cgroup", "rt") as file:
-            return "docker" in file.read()
-    except Exception:
-        return False
-
+# Rest of the imports remain the same...
 def setup_selenium(attended_mode=False):
+    """
+    Set up Chrome WebDriver with headless mode and additional configurations for robust scraping
+    """
     options = Options()
+    
+    # Always run in headless mode
+    options.add_argument('--headless=new')  # Using the new headless mode
+    
+    # Add essential arguments for stable headless operation
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    options.add_argument('--disable-gpu')
+    options.add_argument('--window-size=1920,1080')
+    options.add_argument('--start-maximized')
+    
+    # Add additional arguments for better performance and stability
+    options.add_argument('--disable-blink-features=AutomationControlled')
+    options.add_argument('--disable-extensions')
+    options.add_argument('--disable-notifications')
+    options.add_argument('--ignore-certificate-errors')
+    options.add_argument('--disable-popup-blocking')
+    
+    # Set user agent to avoid detection
+    options.add_argument(f'user-agent={random.choice(USER_AGENTS)}')
+    
+    # Additional preferences for performance
+    options.add_experimental_option('excludeSwitches', ['enable-automation', 'enable-logging'])
+    options.add_experimental_option('useAutomationExtension', False)
+    
+    # Create service
     service = Service(ChromeDriverManager().install())
-
-    # Apply headless options based on whether the code is running in Docker
-    if is_running_in_docker():
-        # Running inside Docker, use Docker-specific headless options
-        for option in HEADLESS_OPTIONS_DOCKER:
-            options.add_argument(option)
-    else:
-        # Not running inside Docker, use the normal headless options
-        for option in HEADLESS_OPTIONS:
-            options.add_argument(option)
-
+    
     # Initialize the WebDriver
     driver = webdriver.Chrome(service=service, options=options)
+    
+    # Set page load timeout
+    driver.set_page_load_timeout(30)
+    
     return driver
 
-
-
-
 def fetch_html_selenium(url, attended_mode=False, driver=None):
+    """
+    Fetch HTML content using Selenium in headless mode with improved error handling
+    """
     if driver is None:
         driver = setup_selenium(attended_mode)
         should_quit = True
-        if not attended_mode:
-            driver.get(url)
     else:
         should_quit = False
-        # Do not navigate to the URL if in attended mode and driver is already initialized
-        if not attended_mode:
-            driver.get(url)
-
+    
     try:
-        if not attended_mode:
-            # Add more realistic actions like scrolling
-            driver.execute_script("window.scrollTo(0, document.body.scrollHeight/2);")
-            time.sleep(random.uniform(1.1, 1.8))
-            driver.execute_script("window.scrollTo(0, document.body.scrollHeight/1.2);")
-            time.sleep(random.uniform(1.1, 1.8))
-            driver.execute_script("window.scrollTo(0, document.body.scrollHeight/1);")
-            time.sleep(random.uniform(1.1, 1.8))
-        # Get the page source from the current page
+        # Set a page load timeout
+        driver.set_page_load_timeout(30)
+        
+        # Navigate to URL
+        driver.get(url)
+        
+        # Add random delays and scrolling for more natural behavior
+        time.sleep(random.uniform(2, 4))
+        
+        # Scroll in steps
+        total_height = int(driver.execute_script("return document.body.scrollHeight"))
+        for i in range(3):
+            scroll_height = total_height * (i + 1) // 3
+            driver.execute_script(f"window.scrollTo(0, {scroll_height});")
+            time.sleep(random.uniform(1, 2))
+        
+        # Wait for body to be present
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.TAG_NAME, "body"))
+        )
+        
+        # Get the page source
         html = driver.page_source
         return html
+        
+    except Exception as e:
+        print(f"Error fetching URL {url}: {str(e)}")
+        return None
+        
     finally:
-        if should_quit:
+        if should_quit and driver is not None:
             driver.quit()
-
 
 
 

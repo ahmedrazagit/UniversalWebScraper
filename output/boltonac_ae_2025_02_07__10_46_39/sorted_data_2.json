@@ -1,0 +1,39 @@
+{
+    "listings": [
+        {
+            "University Name": "University of Bolton",
+            "Program Name": "ATHE LEVEL 4 \u2013 DIPLOMA IN COMPUTING",
+            "Complete program URL with www": "https://boltonac.ae/athe-level-4-diploma-in-computing/"
+        },
+        {
+            "University Name": "University of Bolton",
+            "Program Name": "ATHE Level 5 \u2013 Diploma In Computing",
+            "Complete program URL with www": "https://boltonac.ae/athe-level-5-diploma-in-computing/"
+        },
+        {
+            "University Name": "University of Bolton",
+            "Program Name": "MSc \u2013 Software Engineering",
+            "Complete program URL with www": "https://boltonac.ae/msc-software-engineering/"
+        },
+        {
+            "University Name": "University of Bolton",
+            "Program Name": "BSc (HONS) COMPUTING (TOP-UP)",
+            "Complete program URL with www": "https://boltonac.ae/bsc-hons-computing-top-up/"
+        },
+        {
+            "University Name": "University of Bolton",
+            "Program Name": "BSc (HONS) in COMPUTING",
+            "Complete program URL with www": "https://boltonac.ae/bsc-hons-computing/"
+        },
+        {
+            "University Name": "University of Bolton",
+            "Program Name": "BEng (Hons) in Software Engineering",
+            "Complete program URL with www": "https://www.boltonac.ae/beng-software-engineering/"
+        },
+        {
+            "University Name": "University of Bolton",
+            "Program Name": "BEng (Hons) in Software Engineering (Top Up)",
+            "Complete program URL with www": "https://www.boltonac.ae/beng-software-engineering-top-up/"
+        }
+    ]
+}

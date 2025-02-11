@@ -1,14 +1,7 @@
-# streamlit_app.py
-import os
 
-def install_chromium():
-    os.system("apt-get update && apt-get install -y chromium-chromedriver chromium-browser")
-
-# Run the installation
-install_chromium()
 
 # Continue with the rest of your script
-
+import os
 import streamlit as st
 from streamlit_tags import st_tags_sidebar
 import pandas as pd

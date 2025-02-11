@@ -1,0 +1,8 @@
+{
+    "listings": [
+        {
+            "Description": "Responsible for daily review of databases, performance monitoring, deployment of alerts, and fault diagnosis. Installation and deployment of database servers, perform simple performance optimization, ensure safe operation of databases, etc. Assist the team in achieving the availability, optimization of performance, troubleshooting, design capacity, and construction of the database platform of the company's database services. Take the initiative to learn and understand the cutting-edge technologies in the database industry, and be able to apply them to the company, control the overall direction of the company's internal database technology evolution and iteration. Create a good technical atmosphere in the team.",
+            "Requirements": "Understanding of basic database storage engines (such as InnoDB, MyISAM, NDB) functions and features, as well as the principle and practice of master-slave replication. Basic understanding of MySQL, TiDB, Redis, and ES. Basic knowledge of SQL query optimization techniques and related database tools. Basic scripting language programming ability and familiarity with one or more of the following languages: Python, Shell, Perl, Java, Go. Strong sense of responsibility, good teamwork spirit, excellent communication and presentation skills. Good ability to handle pressure and respect production systems."
+        }
+    ]
+}

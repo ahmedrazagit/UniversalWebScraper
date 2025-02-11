@@ -1,0 +1,29 @@
+{
+    "listings": [
+        {
+            "Univeristy Name": "University of Manchester",
+            "Program Name": "Manchester Global Part-time MBA",
+            "Complete program URL with www": "https://www.manchester.ac.ae/programmes/part-time-global-mba"
+        },
+        {
+            "Univeristy Name": "University of Manchester",
+            "Program Name": "Global Executive MBA",
+            "Complete program URL with www": "https://www.manchester.ac.ae/programmes/executive-mba"
+        },
+        {
+            "Univeristy Name": "University of Manchester",
+            "Program Name": "Part-time MSc Financial Management",
+            "Complete program URL with www": "https://www.manchester.ac.ae/programmes/part-time-msc-financial-management"
+        },
+        {
+            "Univeristy Name": "University of Manchester",
+            "Program Name": "Part-time MA Educational Leadership in Practice",
+            "Complete program URL with www": "https://www.manchester.ac.ae/programmes/ma-educational-leadership-practice"
+        },
+        {
+            "Univeristy Name": "University of Manchester",
+            "Program Name": "Executive Education",
+            "Complete program URL with www": "https://info.manchester.ac.ae/executive-education"
+        }
+    ]
+}

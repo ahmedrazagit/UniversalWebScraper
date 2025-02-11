@@ -1,0 +1,54 @@
+{
+    "listings": [
+        {
+            "University Name": "University of Birmingham",
+            "Program Name": "BSc Biomedical Science",
+            "Complete program URL with www": "https://www.birmingham.ac.uk/dubai/study/courses/undergraduate/biomedical-science.aspx"
+        },
+        {
+            "University Name": "University of Birmingham",
+            "Program Name": "BSc Biomedical Science with Integrated Foundation Year",
+            "Complete program URL with www": "https://www.birmingham.ac.uk/dubai/study/courses/undergraduate/biomedical-science-bsc-with-integrated-foundation-year.aspx"
+        },
+        {
+            "University Name": "University of Birmingham",
+            "Program Name": "MSci Biomedical Science",
+            "Complete program URL with www": "https://www.birmingham.ac.uk/dubai/study/courses/undergraduate/biomedical-science-msci.aspx"
+        },
+        {
+            "University Name": "University of Birmingham",
+            "Program Name": "BSc Accounting and Finance with Integrated Foundation Year",
+            "Complete program URL with www": "/dubai/study/undergraduate/subjects/business-and-finance-courses/accounting-and-finance-with-foundation-bsc"
+        },
+        {
+            "University Name": "University of Birmingham",
+            "Program Name": "BSc Accounting and Finance",
+            "Complete program URL with www": "/dubai/study/undergraduate/subjects/business-and-finance-courses/accounting-and-finance-bsc"
+        },
+        {
+            "University Name": "University of Birmingham",
+            "Program Name": "BSc Business Management",
+            "Complete program URL with www": "/dubai/study/undergraduate/subjects/business-and-finance-courses/business-management-bsc"
+        },
+        {
+            "University Name": "University of Birmingham",
+            "Program Name": "BSc Business Management with Economics",
+            "Complete program URL with www": "/dubai/study/undergraduate/subjects/business-and-finance-courses/business-management-with-economics-bsc"
+        },
+        {
+            "University Name": "University of Birmingham",
+            "Program Name": "BSc Business Management with Economics with Integrated Foundation Year",
+            "Complete program URL with www": "/dubai/study/undergraduate/subjects/business-and-finance-courses/business-management-with-economics-with-foundation-bsc"
+        },
+        {
+            "University Name": "University of Birmingham",
+            "Program Name": "BSc Business Management with Finance with Integrated Foundation Year",
+            "Complete program URL with www": "/dubai/study/undergraduate/subjects/business-and-finance-courses/business-management-with-finance-with-foundation-bsc"
+        },
+        {
+            "University Name": "University of Birmingham",
+            "Program Name": "BSc Business Management with Finance",
+            "Complete program URL with www": "/dubai/study/undergraduate/subjects/business-and-finance-courses/business-management-with-finance-bsc"
+        }
+    ]
+}

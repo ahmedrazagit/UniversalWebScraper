@@ -1,0 +1,19 @@
+{
+    "listings": [
+        {
+            "University Name": "AURAK",
+            "Program Name": "Bachelor of Science in Mechanical Engineering",
+            "Complete Program/page URL with www extension": "https://aurak.ac.ae/undergraduate-degrees/engineering/bachelor-of-science-in-mechanical-engineering"
+        },
+        {
+            "University Name": "AURAK",
+            "Program Name": "Master of Science in Sustainable and Renewable Energy",
+            "Complete Program/page URL with www extension": "https://aurak.ac.ae/graduate-degrees/engineering/master-of-science-in-sustainable-and-renewable-energy"
+        },
+        {
+            "University Name": "AURAK",
+            "Program Name": "Master of Science in Engineering Project Management",
+            "Complete Program/page URL with www extension": "https://aurak.ac.ae/graduate-degrees/engineering/master-of-science-in-engineering-project-management"
+        }
+    ]
+}

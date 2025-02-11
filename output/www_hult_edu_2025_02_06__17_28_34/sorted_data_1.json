@@ -1,0 +1,24 @@
+{
+    "listings": [
+        {
+            "University Name": "Hult International Business School",
+            "Program Name": "Global One-Year MBA",
+            "Complete URL for each program with www": "https://www.hult.edu/mba/one-year-mba/"
+        },
+        {
+            "University Name": "Hult International Business School",
+            "Program Name": "Finance MBA",
+            "Complete URL for each program with www": "https://www.hult.edu/mba/finance-mba/"
+        },
+        {
+            "University Name": "Hult International Business School",
+            "Program Name": "Hybrid Executive MBA",
+            "Complete URL for each program with www": "https://www.hult.edu/mba/executive-mba/"
+        },
+        {
+            "University Name": "Hult International Business School",
+            "Program Name": "Global Online MBA",
+            "Complete URL for each program with www": "https://www.hult.edu/mba/online-mba/"
+        }
+    ]
+}

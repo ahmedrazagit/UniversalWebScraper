@@ -1,0 +1,19 @@
+{
+    "listings": [
+        {
+            "University Name": "University of Bolton",
+            "Program Name": "School of Engineering",
+            "Complete program URL with www": "https://boltonac.ae/school-of-engineering-courses/"
+        },
+        {
+            "University Name": "University of Bolton",
+            "Program Name": "School of Computing",
+            "Complete program URL with www": "https://www.boltonac.ae/programmes/school-of-computing-courses/"
+        },
+        {
+            "University Name": "University of Bolton",
+            "Program Name": "School of Business",
+            "Complete program URL with www": "https://www.boltonac.ae/programmes/school-of-business-courses/"
+        }
+    ]
+}

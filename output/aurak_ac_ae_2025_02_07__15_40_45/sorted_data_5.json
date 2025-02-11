@@ -1,0 +1,24 @@
+{
+    "listings": [
+        {
+            "University Name": "American University of Ras Al Khaimah",
+            "Program Name": "Bachelor of Science in Computer Engineering",
+            "Complete Program/page URL with www extension": "https://aurak.ac.ae/undergraduate-degrees/engineering/bachelor-of-science-in-computer-engineering"
+        },
+        {
+            "University Name": "American University of Ras Al Khaimah",
+            "Program Name": "Bachelor of Science in Computer Science",
+            "Complete Program/page URL with www extension": "https://aurak.ac.ae/undergraduate-degrees/computer-science/bachelor-of-science-in-computer-science"
+        },
+        {
+            "University Name": "American University of Ras Al Khaimah",
+            "Program Name": "Bachelor of Science in Artificial Intelligence",
+            "Complete Program/page URL with www extension": "https://aurak.ac.ae/undergraduate-degrees/computer-science/bachelor-of-science-in-artificial-intelligence"
+        },
+        {
+            "University Name": "American University of Ras Al Khaimah",
+            "Program Name": "Minor in Artificial Intelligence",
+            "Complete Program/page URL with www extension": "https://aurak.ac.ae/undergraduate-degrees/engineering/minor-in-artificial-intelligence"
+        }
+    ]
+}

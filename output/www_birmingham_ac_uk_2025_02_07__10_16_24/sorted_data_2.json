@@ -1,0 +1,54 @@
+{
+    "listings": [
+        {
+            "Univeristy Name": "University of Birmingham",
+            "Program Name": "Accounting and Finance MSc",
+            "Complete program URL with www": "https://www.birmingham.ac.uk/dubai/study/postgraduate/subjects/business-and-finance-courses/accounting-and-finance-msc"
+        },
+        {
+            "Univeristy Name": "University of Birmingham",
+            "Program Name": "Advanced Engineering Management MSc",
+            "Complete program URL with www": "https://www.birmingham.ac.uk/dubai/study/postgraduate/subjects/engineering-courses/advanced-engineering-management-msc"
+        },
+        {
+            "Univeristy Name": "University of Birmingham",
+            "Program Name": "Advanced Practice in Healthcare MSc / PGDip / PGCert",
+            "Complete program URL with www": "https://www.birmingham.ac.uk/dubai/study/postgraduate/subjects/health-sciences-courses/advanced-practice-in-healthcare-msc"
+        },
+        {
+            "Univeristy Name": "University of Birmingham",
+            "Program Name": "Artificial Intelligence (AI) and Computer Science MSc / PGDip",
+            "Complete program URL with www": "https://www.birmingham.ac.uk/dubai/study/postgraduate/subjects/computer-science-courses/artificial-intelligence-and-computer-science-msc"
+        },
+        {
+            "Univeristy Name": "University of Birmingham",
+            "Program Name": "Artificial Intelligence (AI) and Machine Learning MSc",
+            "Complete program URL with www": "https://www.birmingham.ac.uk/dubai/study/postgraduate/subjects/computer-science-courses/artificial-intelligence-and-machine-learning-msc"
+        },
+        {
+            "Univeristy Name": "University of Birmingham",
+            "Program Name": "Bioinformatics MSc",
+            "Complete program URL with www": "https://www.birmingham.ac.uk/dubai/study/postgraduate/subjects/health-sciences-courses/bioinformatics-msc"
+        },
+        {
+            "Univeristy Name": "University of Birmingham",
+            "Program Name": "Computer Science MSc / PGDip",
+            "Complete program URL with www": "https://www.birmingham.ac.uk/dubai/study/postgraduate/subjects/computer-science-courses/computer-science-msc"
+        },
+        {
+            "Univeristy Name": "University of Birmingham",
+            "Program Name": "Construction Management MSc",
+            "Complete program URL with www": "https://www.birmingham.ac.uk/dubai/study/postgraduate/subjects/engineering-courses/construction-management-msc"
+        },
+        {
+            "Univeristy Name": "University of Birmingham",
+            "Program Name": "Cyber Security MSc",
+            "Complete program URL with www": "https://www.birmingham.ac.uk/dubai/study/postgraduate/subjects/computer-science-courses/cyber-security-msc"
+        },
+        {
+            "Univeristy Name": "University of Birmingham",
+            "Program Name": "Data Science MSc",
+            "Complete program URL with www": "https://www.birmingham.ac.uk/dubai/study/postgraduate/subjects/computer-science-courses/data-science-msc"
+        }
+    ]
+}
