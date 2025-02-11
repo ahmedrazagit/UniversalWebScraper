@@ -1,8 +1,0 @@
-{
-    "listings": [
-        {
-            "Description": "The Data Engineer intern will be participating in exciting projects covering the end-to-end data lifecycle \u2013 from raw data integrations with primary and third-party systems, through advanced data modelling, to state-of-the-art data visualisation and development of innovative data products. You will have the opportunity to learn how to build and work with both batch and real-time data processing pipelines. You will work in a modern cloud-based data warehousing environment alongside a team of diverse, intense and interesting co-workers. You will liaise with other departments \u2013 such as product & tech, the core business verticals, trust & safety, finance and others \u2013 to enable them to be successful.",
-            "Requirements": "Bachelor\u2019s degree in computer science, engineering, math, physics or any related quantitative field. Knowledge of relational and dimensional data models. Knowledge of terminal operations and Linux workflows. Ability to communicate insights and findings to a non-technical audience. Good SQL skills across a variety of relational data warehousing technologies especially in cloud data warehousing (e.g. Amazon Redshift, Google BigQuery, Snowflake, Vertica, etc.). Attention to details and analytical thinking. Entrepreneurial spirit and ability to think creatively; highly-driven and self-motivated; strong curiosity and strive for continuous learning."
-        }
-    ]
-}

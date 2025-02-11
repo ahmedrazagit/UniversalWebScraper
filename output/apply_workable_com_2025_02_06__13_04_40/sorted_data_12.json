@@ -1,8 +1,0 @@
-{
-    "listings": [
-        {
-            "Description": "As a Data Engineer, you will play a pivotal role in building and maintaining reliable data pipelines, handling diverse datasets, and creating critical integrations with industry-standard Document Management Systems (DMS). Your expertise in Python, data engineering, and DMS integration will be essential in ensuring seamless interoperability between our platform and client systems, including NetDocuments, iManage, SharePoint, and eDocs. This role requires prior experience with DMS integration work, as it will be a primary focus of your responsibilities.",
-            "Requirements": "Proven experience developing integrations with NetDocuments, iManage, eDocs, SharePoint, or similar Document Management Systems. 3+ years of professional experience in building and maintaining data pipelines. Proficiency in Python, with a strong focus on scalable and maintainable solutions. Hands-on experience with tools such as BeautifulSoup, Scrapy, or equivalent frameworks. Strong knowledge of SQL (PostgreSQL, MySQL) and experience working with large datasets. Familiarity with OCR technologies such as Tesseract, Amazon Textract, or similar. Experience working with AWS, GCP, or Azure for data storage and processing. Ability to handle datasets in various languages effectively."
-        }
-    ]
-}

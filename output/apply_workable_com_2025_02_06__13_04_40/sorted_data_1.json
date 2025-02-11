@@ -1,8 +1,0 @@
-{
-    "listings": [
-        {
-            "Description": "Bayut & dubizzle - The Arab World's only Homegrown Unicorn Business is now inviting applications for internships of 6 months duration in our Business Intelligence department. As a Machine Learning Intern, you will be participating in exciting projects covering the end-to-end Data Science lifecycle \u2013 from raw data cleaning and exploration with primary and third-party systems, through advanced state-of-the-art data visualization and Machine learning development. In this role, you will: Query large datasets with SQL and feed ML models, Perform data exploration to find patterns in the data and understand the state and quality of the data available, Utilize Python code for analyzing data and building statistical models to solve specific business problems, Evaluate ML models and fine tune model parameters considering the business problem behind, Collaborate with senior peers to Deploy ML models in production, Build customer-facing reporting tools to provide insights and metrics which track system performance, Being part and contributing towards a strong team culture and ambition to be on the cutting edge of big data, Participate in the off-hours on call stability rotation to support live ML models.",
-            "Requirements": "Bachelor\u2019s degree in AI, Statistics, Math, Operations Research, Engineering, Computer Science, or a related quantitative field. Statistical modelling and math, Basic knowledge of Machine learning algorithms, Basic knowledge of SQL, Basic knowledge of visualization tools such as Periscope, Excellent verbal and written communication, Strong problem solving skills."
-        }
-    ]
-}

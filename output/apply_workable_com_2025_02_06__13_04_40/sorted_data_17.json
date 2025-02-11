@@ -1,8 +1,0 @@
-{
-    "listings": [
-        {
-            "Description": "As the Database Tsar, you will scout, evaluate, and integrate new data sources to enhance our predictive models and knowledge graph. Your role goes beyond daily database management; you will design and optimize the entire data pipeline. If you are passionate about data quality, interoperability, and enabling AI-driven insights, this position is for you.",
-            "Requirements": "Five or more years of experience in data engineering, database administration, or a related role. Expertise in both SQL and NoSQL databases; familiarity with Big Data pipelines such as Spark and Kafka is a plus. Experience working with life sciences or healthcare datasets is strongly preferred. Strong communication skills with the ability to manage external partnerships and negotiate data usage rights."
-        }
-    ]
-}
