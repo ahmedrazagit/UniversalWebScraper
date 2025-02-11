@@ -27,6 +27,12 @@ from openai import OpenAI
 import google.generativeai as genai
 from groq import Groq
 
+from selenium.webdriver.firefox.service import Service as FirefoxService
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
+from selenium.common.exceptions import WebDriverException
+from webdriver_manager.firefox import GeckoDriverManager
+import shutil
+
 from api_management import get_api_key
 from assets import USER_AGENTS, PRICING, SYSTEM_MESSAGE, USER_MESSAGE, LLAMA_MODEL_FULLNAME, GROQ_LLAMA_MODEL_FULLNAME
 load_dotenv()
