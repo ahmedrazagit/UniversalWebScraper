@@ -23,7 +23,7 @@ Follow these steps to get your development environment running:
 
 ```bash
 # Clone the repository
-git clone https://github.com/reda-marzouk608/scrape-master
+git clone https://github.com/ahmedrazagit/UniversalWebScraper.git
 cd scrape-master
 
 # It's recommended to create a virtual environment
@@ -42,6 +42,8 @@ pip install -r requirements.txt
 ## Launching the Application
 
 To run ScrapeMaster, navigate to the project directory and run the following command:
+
+streamlit run streamlit_app.py  
 
 ```bash
 streamlit run streamlit_app.py
